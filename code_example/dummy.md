@@ -12,5 +12,5 @@
   df3_dummy = pd.get_dummies(df3, columns=['UNIV_RATING'], drop_first = True)
 
 ```
-
+- columns : dummy를 생성할 colums을 list로 입력
 - drop_first : 맨 처음 범주에 대해서는 별도로 dummy variable를 할당하지 않음
