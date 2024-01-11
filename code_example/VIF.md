@@ -6,9 +6,10 @@
 
 ```python
 from statsmodels.stats.outliers_influence import variance_inflation_factor
-df2_1 = df2.iloc[:,1:-1]
-df2_1['const'] = 1
-
-vif = pd.DataFrame()
-vif['VIF Factor'] = [variance_inflation_factor(df2_1.values, i) for i in range(df2_1.shape[1])]
+formula_like = "SATISFACTION ~ " + " + ".join(df.columns[1:-1])
+y, x = dmatrices(formula_like, df, return_type='dataframe')
+v = []
+for i in range(0,12):
+    v = v + [vif(x.values, i)]
+v
 ```
