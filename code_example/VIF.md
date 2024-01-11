@@ -6,6 +6,7 @@
 
 ```python
 from statsmodels.stats.outliers_influence import variance_inflation_factor
+from patsy import dmatrices
 formula_like = "SATISFACTION ~ " + " + ".join(df.columns[1:-1])
 y, x = dmatrices(formula_like, df, return_type='dataframe')
 v = []
